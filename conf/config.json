@@ -1,0 +1,9 @@
+{
+    "SQLALCHEMY_DATABASE_URI": "sqlite:///movie.db",
+    "SQLALCHEMY_TRACK_MODIFICATIONS": false,
+    "JWT_SECRET_KEY": "",
+    "JWT_BLACKLIST_ENABLED": true,
+    "SQLALCHEMY_MOVIE_TABLE": "TB_MOVIE",
+    "SQLALCHEMY_USER_TABLE": "TB_USER",
+    "EMAIL_API_KEY": ""
+}

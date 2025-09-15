@@ -1,0 +1,28 @@
+{
+    "SWAGGER_TEMPLATE": {
+        "swagger": "2.0",
+        "info": {
+            "title": "API de Filmes da Netflix",
+            "description": "API para consulta de filmes da Netflix criada com base no dataset do Keggle disponibilizado em: https://www.kaggle.com/datasets/shivamb/netflix-shows/data",
+            "version": "1.0.0"
+        },
+        "basePath": "/",
+        "schemes": [
+            "http",
+            "https"
+        ],
+        "securityDefinitions": {
+            "Bearer": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header",
+                "description": "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\""
+            }
+        },
+        "security": [
+            {
+                "Bearer": []
+            }
+        ]
+    }
+}
