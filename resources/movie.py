@@ -21,7 +21,7 @@ class Movie(Resource):
         if MovieModel.find_movie(id):
             return {'message':'Id {} already exists.'.format(id)}, 409
         data = MovieModel.parse_movie(id)
-        movie = MovieModel(id, **data)
+        movie = MovieModel(**data)
         try:
             movie.insert_movie()
             return {
@@ -38,7 +38,7 @@ class Movie(Resource):
         if movie:
             data = MovieModel.parse_movie(id)
             try:
-                movie.update_movie(**data)
+                movie.update_movie(id,**data)
                 return {
                     'hotel': movie.json(),
                     'message': 'Movie entry successfully updated.'

@@ -14,7 +14,7 @@ class MovieModel(db.Model):
     director = db.Column(db.String(200))
     cast = db.Column(db.String(2000))
     country = db.Column(db.String(100))
-    date_added = db.Column(db.DateTime, default=datetime.now())
+    date_added = db.Column(db.Date, default=datetime.now())
     release_year = db.Column(db.Integer, nullable = False)
     rating = db.Column(db.String(10))
     duration = db.Column(db.String(15))

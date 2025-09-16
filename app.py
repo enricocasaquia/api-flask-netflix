@@ -18,13 +18,16 @@ app.config['SQLALCHEMY_DATABASE_URI'] = config['SQLALCHEMY_DATABASE_URI']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config['SQLALCHEMY_TRACK_MODIFICATIONS']
 app.config['JWT_SECRET_KEY'] = config['JWT_SECRET_KEY']
 app.config['JWT_BLACKLIST_ENABLED'] = config['JWT_BLACKLIST_ENABLED']
+app.config['JWT_VERIFY_SUB'] = config['JWT_VERIFY_SUB']
 
 @app.route('/')
 def index():
     return '<h1>API de filmes do catálogo da Netflix!</h1>'
 
-@app.before_first_request
+@app.before_request
 def create_database():
+    app.before_request_funcs[None].remove(create_database)
+    from sql_alchemy import db
     db.create_all()
 
 swagger = Swagger(app, template=flasgger['SWAGGER_TEMPLATE'])
