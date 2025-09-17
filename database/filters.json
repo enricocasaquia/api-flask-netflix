@@ -1,0 +1,7 @@
+{
+    "movies": {
+        "instance": "instance/movie.db",
+        "table": "tb_movie",
+        "filters": ["type", "country", "release_year", "rating", "listed_in"]
+    } 
+}

@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from flasgger import Swagger
-from resources.movie import Movie
+from resources.movie import Movie, Movies
 from resources.user import User, UserSignon, UserLogin, UserLogout, UserConfirm
 from blacklist import BLACKLIST
 import json
@@ -32,6 +32,7 @@ def create_database():
 
 swagger = Swagger(app, template=flasgger['SWAGGER_TEMPLATE'])
 api = Api(app)
+api.add_resource(Movies, '/movies')
 api.add_resource(Movie, '/movies/<int:id>')
 api.add_resource(User, '/users/<int:id>')
 api.add_resource(UserSignon, '/signon')
