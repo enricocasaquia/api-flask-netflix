@@ -45,7 +45,7 @@ class UserModel(db.Model):
                     auth=("api", config['EMAIL_API_KEY']),
                     data={"from": "no-reply <postmaster@sandboxf8b2ef7d3e284c88916492b8f3bb185c.mailgun.org>",
                         "to": f"<{self.email}>",
-                        "subject": f"Confirmação de Cadastro da API de Hotelaria",
+                        "subject": f"Confirmação de Cadastro da API da Netflix",
                         "html": html})
             except: return {'message': 'Error sending email.'}
     
